@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffe4ef">
+<title>For Noshin ♡</title>
+<style>
+:root{--pink:#ff6fa9;--deep:#b83b72;--soft:#fff4f8;--ink:#63364a;--line:#ffd0e1}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(145deg,#fff8fb,#ffe5f0 55%,#fff2f8);color:var(--ink);font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;min-height:100vh;overflow-x:hidden}
+main{width:min(760px,100%);margin:auto;padding:22px 16px 54px}
+.hero,.card{background:#ffffffd9;border:1px solid white;border-radius:26px;box-shadow:0 12px 38px #d85a8918;padding:24px;margin:14px 0}
+.hero{text-align:center;padding:35px 22px 30px;position:relative;overflow:hidden}
+.kicker{letter-spacing:.15em;text-transform:uppercase;font-size:.72rem;color:#c45d87;font-weight:800}
+h1{font-size:clamp(2.4rem,9vw,4.4rem);line-height:1;margin:12px 0;color:var(--deep)}
+h2{margin:0 0 12px;font-size:1.35rem;color:var(--deep)}
+p{line-height:1.7;margin:10px 0}
+.sub{font-size:1.03rem;max-width:520px;margin:12px auto 22px}
+button,.button{border:0;border-radius:999px;background:var(--pink);color:white;padding:12px 18px;font-weight:800;font-size:.96rem;cursor:pointer;box-shadow:0 6px 15px #ff6fa936}
+button:hover,.button:hover{filter:brightness(.97);transform:translateY(-1px)}
+.secondary{background:#fff0f6;color:var(--deep);border:1px solid var(--line);box-shadow:none}
+.hidden{display:none!important}
+.pill{display:inline-block;background:#fff0f6;border:1px solid var(--line);padding:7px 12px;border-radius:999px;font-size:.85rem}
+.hearts{font-size:1.2rem;letter-spacing:.5rem;animation:bob 2.5s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.secret{width:100%;min-height:88px;background:#fff3f8;color:var(--deep);border:1px dashed #f6a8c7;box-shadow:none;border-radius:18px;text-align:left}
+.secret span{display:block;font-weight:500;font-size:.85rem;margin-top:6px}
+.letter{white-space:pre-line;background:#fff8fb;border-left:4px solid #ff9dc2;border-radius:12px;padding:16px;line-height:1.85}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.photo{border:1px dashed #ed9dbd;background:#fff7fa;border-radius:16px;min-height:150px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;overflow:hidden}
+.photo img{width:100%;height:190px;object-fit:cover;border-radius:11px}
+.photo small{display:block}
+input[type=file]{display:block;width:100%;margin-top:12px}
+audio{width:100%;margin:8px 0}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
+.time{background:#fff0f6;border-radius:15px;padding:12px 4px;border:1px solid var(--line)}
+.time strong{display:block;font-size:1.5rem;color:var(--deep)}
+.time span{font-size:.73rem}
+footer{text-align:center;font-size:.85rem;padding:20px 5px;color:#9a5975}
+.note{font-size:.85rem;color:#96677c}
+.confetti{position:fixed;pointer-events:none;z-index:10;animation:fall 2.8s linear forwards;font-size:20px}
+@keyframes fall{to{transform:translateY(110vh) rotate(500deg);opacity:0}}
+@media(max-width:460px){main{padding:12px}.hero,.card{padding:20px 16px;border-radius:21px}.grid{gap:8px}.secret{padding:12px}.countdown{gap:5px}.time strong{font-size:1.25rem}.photo img{height:155px}}
+</style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div class="hearts">♡ ✿ ♡</div>
+    <div class="kicker">a tiny universe made for</div>
+    <h1>Noshin</h1>
+    <p class="sub">A little corner of the internet, just to remind you how special you are. 🌷</p>
+    <button id="openGift">Open your gift 💌</button>
+    <p class="note">Made with care, just for you ♡</p>
+  </section>
+
+  <div id="giftContent" class="hidden">
+    <section class="card">
+      <span class="pill">01 · a letter</span>
+      <h2 style="margin-top:14px">A little letter for you 💗</h2>
+      <div class="letter" id="loveLetter">Dear Noshin,
+
+If I could wrap a feeling and give it to you, it would be the comfort of knowing that you matter, you are appreciated, and you deserve so many beautiful things.
+
+Thank you for being your own lovely self. I hope life gives you reasons to smile on ordinary days, courage on difficult days, and little surprises when you least expect them.
+
+No website could hold every thought I have for you, but I hope this tiny one makes you smile.
+
+With lots of care,
+Someone who thinks you're wonderful ♡</div>
+      <p class="note">Tip: edit this letter in the HTML file to make it sound exactly like you.</p>
+    </section>
+
+    <section class="card">
+      <span class="pill">02 · little secrets</span>
+      <h2 style="margin-top:14px">Tap a heart to unlock a message 🔐</h2>
+      <div class="grid">
+        <button class="secret" data-message="You make ordinary moments feel a little more special. ♡">💌 Secret 01<span>tap to open</span></button>
+        <button class="secret" data-message="I hope you never forget how much you deserve kindness and happiness. 🌷">🎀 Secret 02<span>tap to open</span></button>
+        <button class="secret" data-message="If today is difficult, take a breath. You don't have to solve everything at once. ☁️">🌙 Secret 03<span>tap to open</span></button>
+        <button class="secret" data-message="Your next little surprise is this reminder: someone is wishing good things for you. ✨">🧸 Secret 04<span>tap to open</span></button>
+      </div>
+      <p id="secretOutput" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <span class="pill">03 · our memories</span>
+      <h2 style="margin-top:14px">A tiny photo corner 📸</h2>
+      <p>Add your photos below. They stay in this browser while the page is open; for photos to appear for Noshin too, add image files to the website folder and update the HTML, or use hosted image URLs.</p>
+      <div class="gallery" id="gallery">
+        <div class="photo">♡<br><small>Memory one</small></div>
+        <div class="photo">✿<br><small>Memory two</small></div>
+      </div>
+      <label for="photoUpload"><strong>Preview photos on this device</strong></label>
+      <input id="photoUpload" type="file" accept="image/*" multiple>
+      <p class="note">Privacy tip: only upload photos both of you are comfortable sharing.</p>
+    </section>
+
+    <section class="card">
+      <span class="pill">04 · soundtrack</span>
+      <h2 style="margin-top:14px">A song for your little world 🎶</h2>
+      <p>Add an audio file you have permission to use, or use a link to a song you both love.</p>
+      <input id="musicUpload" type="file" accept="audio/*">
+      <audio id="player" controls preload="none"></audio>
+      <p class="note">Browsers usually require a tap before audio can play. Music won't autoplay.</p>
+    </section>
+
+    <section class="card">
+      <span class="pill">05 · birthday countdown</span>
+      <h2 style="margin-top:14px">Counting down to your day 🎂</h2>
+      <p>Choose Noshin's next birthday date below.</p>
+      <label for="birthdayDate">Birthday date</label>
+      <input id="birthdayDate" type="date">
+      <div class="countdown" style="margin-top:14px">
+        <div class="time"><strong id="days">—</strong><span>Days</span></div>
+        <div class="time"><strong id="hours">—</strong><span>Hours</span></div>
+        <div class="time"><strong id="minutes">—</strong><span>Minutes</span></div>
+        <div class="time"><strong id="seconds">—</strong><span>Seconds</span></div>
+      </div>
+      <p id="birthdayMessage" aria-live="polite">A little countdown to a day worth celebrating. ♡</p>
+    </section>
+
+    <section class="hero">
+      <div class="hearts">♡ ✨ ♡</div>
+      <h2>One last little thing…</h2>
+      <p>May your days hold soft moments, unexpected joy, and plenty of reasons to smile.</p>
+      <button id="surprise">Send a shower of hearts 💞</button>
+      <p class="note">You are one of a kind, Noshin.</p>
+    </section>
+  </div>
+  <footer>Made with ♡ for Noshin · a little gift from the heart</footer>
+</main>
+<script>
+const openBtn=document.getElementById('openGift');
+openBtn.addEventListener('click',()=>{
+  document.getElementById('giftContent').classList.remove('hidden');
+  openBtn.textContent='Your gift is open ♡';
+  document.getElementById('giftContent').scrollIntoView({behavior:'smooth'});
+  burst(18);
+});
+document.querySelectorAll('.secret').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.getElementById('secretOutput').textContent=btn.dataset.message;
+    burst(5);
+  });
+});
+document.getElementById('photoUpload').addEventListener('change',e=>{
+  const files=[...e.target.files].filter(f=>f.type.startsWith('image/')).slice(0,12);
+  const gallery=document.getElementById('gallery'); gallery.innerHTML='';
+  files.forEach(file=>{
+    const box=document.createElement('div'); box.className='photo';
+    const img=document.createElement('img'); img.alt='Uploaded memory'; img.src=URL.createObjectURL(file);
+    box.appendChild(img); gallery.appendChild(box);
+  });
+  if(!files.length) gallery.innerHTML='<div class="photo">♡<br><small>Memory one</small></div><div class="photo">✿<br><small>Memory two</small></div>';
+});
+document.getElementById('musicUpload').addEventListener('change',e=>{
+  const file=e.target.files[0]; if(file){const player=document.getElementById('player'); player.src=URL.createObjectURL(file); player.play().catch(()=>{});}
+});
+const dateInput=document.getElementById('birthdayDate');
+function nextBirthday(monthDay){
+  const [month,day]=monthDay.split('-').map(Number);
+  const now=new Date();
+  let target=new Date(now.getFullYear(),month-1,day,0,0,0);
+  if(target<=now) target=new Date(now.getFullYear()+1,month-1,day,0,0,0);
+  return target;
+}
+function updateCountdown(){
+  if(!dateInput.value){
+    ['days','hours','minutes','seconds'].forEach(id=>document.getElementById(id).textContent='—');
+    return;
+  }
+  const target=nextBirthday(dateInput.value.slice(5));
+  let diff=Math.max(0,target.getTime()-Date.now());
+  const d=Math.floor(diff/86400000); diff%=86400000;
+  const h=Math.floor(diff/3600000); diff%=3600000;
+  const m=Math.floor(diff/60000); diff%=60000;
+  const s=Math.floor(diff/1000);
+  document.getElementById('days').textContent=d;
+  document.getElementById('hours').textContent=h;
+  document.getElementById('minutes').textContent=m;
+  document.getElementById('seconds').textContent=s;
+  document.getElementById('birthdayMessage').textContent=d===0&&h===0&&m===0?'Happy Birthday, Noshin! 🎂💗':'Every second brings your special day a little closer. ♡';
+}
+dateInput.addEventListener('change',updateCountdown);
+setInterval(updateCountdown,1000);
+function burst(n){
+  const symbols=['💗','♡','🌸','✨','🎀'];
+  for(let i=0;i<n;i++){
+    const el=document.createElement('span');el.className='confetti';
+    el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    el.style.left=Math.random()*100+'vw';el.style.top='-30px';
+    el.style.animationDelay=(Math.random()*.7)+'s';
+    document.body.appendChild(el);setTimeout(()=>el.remove(),3600);
+  }
+}
+document.getElementById('surprise').addEventListener('click',()=>burst(35));
+</script>
+</body>
+</html>
